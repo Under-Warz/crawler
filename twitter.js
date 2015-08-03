@@ -74,8 +74,6 @@ module.exports = {
 		if (config.twitter.usersToFollow.length > 0) {
 			client.stream('statuses/filter', {follow: config.twitter.usersToFollow.join(',')}, function(stream) {
 				stream.on('data', function(tweet) {
-					console.log(tweet);
-
 					var isRetweeted = tweet.retweeted;
 					var isReplyToTweet = (tweet.in_reply_to_status_id == null) ? false : true;
 					var isReplyToUser = (tweet.in_reply_to_user_id == null) ? false : true;
@@ -117,6 +115,6 @@ module.exports = {
 
 	saveTweet: function(tweet) {
 		// Post tweet to a WS
-		console.log("save twttet", tweet);
+		
 	}
 };
