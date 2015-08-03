@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var webservices = require('./webservices');
 var twitter = require('./twitter');
 
 // Load config file from PM2
@@ -14,9 +15,23 @@ app.get('/', function (req, res) {
   res.send(config);
 });
 
-var server = app.listen(3000, function () {
+// Cron to get options from WS
+var CronJob = require('cron').CronJob; // Every 5 minutes
+if (config.webservices.get_options != null) {
+	webservices.getOptions(function(response) {
+		console.log(response);
+	});
+
+	new CronJob('*/5 * * * *', function() {
+		webservices.getOptions(function(response) {
+			
+		});
+	}, null, true, 'Europe/Paris');
+}
+
+var server = app.listen(config.port, function() {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Starting %s at http://%s:%s', process.env.name, host, port);
 });

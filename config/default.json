@@ -6,15 +6,20 @@
     "env": {
         "NODE_ENV": "dev",
         "config": {
+        	"port": 3000,
+        	"webservices": {
+        		"get_options": "http://localhost/teams.json", // Empty if use options belows (hashtags, usersToFollow...)
+        		"save_post_url": "/"
+        	},
 	        "twitter": {
-	        	"isEnabled": true,
+	        	"isEnabled": false,
 	        	"consumer_key": "iNkZw8pEFzupOVbhJCc2N1MVs",
 	        	"consumer_secret": "8pHGNsLzPNQeeYhRec1q3nfIOYccH33G9kbhHOdFnKELQn3SgK",
 	        	"access_token_key": "2467414032-HvPvEZebWqyozqxfb6xvY2mGfKy32ofKHkssPxG",
 	        	"access_token_secret": "xryzjl6nvi0QrKv9jxmLL7x6tqPEAZyqNBPmFLHRjP5UT",
-	        	"hashtags": ["#test", "#dev"],
-	        	"usersToFollow": ["2431931683"],
-	        	"languages": ["fr"],
+	        	"hashtags": ["#test", "#dev"], // Empty for no hashtags
+	        	"usersToFollow": ["2431931683"], // Empty for no follow
+	        	"languages": ["fr"], // Empty for all languages
 	        	"includeReply": false,
 	        	"includeRetweets": false
 	        }
