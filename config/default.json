@@ -1,0 +1,23 @@
+{
+    "name"        : "Crawler_DEV",
+    "cwd"         : "/Users/underwarz/Sites/crawler",
+    "script"      : "app.js",
+    "watch"       : true,
+    "env": {
+        "NODE_ENV": "dev",
+        "config": {
+	        "twitter": {
+	        	"isEnabled": true,
+	        	"consumer_key": "iNkZw8pEFzupOVbhJCc2N1MVs",
+	        	"consumer_secret": "8pHGNsLzPNQeeYhRec1q3nfIOYccH33G9kbhHOdFnKELQn3SgK",
+	        	"access_token_key": "2467414032-HvPvEZebWqyozqxfb6xvY2mGfKy32ofKHkssPxG",
+	        	"access_token_secret": "xryzjl6nvi0QrKv9jxmLL7x6tqPEAZyqNBPmFLHRjP5UT",
+	        	"hashtags": ["#test", "#dev"],
+	        	"usersToFollow": ["2431931683"],
+	        	"languages": ["fr"],
+	        	"includeReply": false,
+	        	"includeRetweets": false
+	        }
+	    }
+    }
+}
