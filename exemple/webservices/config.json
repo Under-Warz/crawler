@@ -1,0 +1,10 @@
+{
+	"twitter": {
+		"isEnabled": false,
+		"hashtags": [],
+		"usersToFollow": [],
+		"languages": [],
+		"includeReply": false,
+		"includeRetweets": false
+	}
+}

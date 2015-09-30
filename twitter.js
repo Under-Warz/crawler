@@ -114,7 +114,6 @@ module.exports = {
 	},
 
 	saveTweet: function(tweet) {
-		// Post tweet to a WS
-		
+		// Post tweet to a WS or save it into DB directly
 	}
 };
