@@ -28,7 +28,10 @@ module.exports = {
 
 		}
 
-		request.post(config.webservices.save_post, form: params}, function(error, response, body) {
+		request.post({
+			url: config.webservices.save_post, 
+			form: params
+		}, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				if (callback) {
 					callback(JSON.parse(body));

@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var webservices = require('./webservices');
 var twitter = require('./twitter');
+var flickr = require('./flickr');
 
 // Load config file from PM2
 config = JSON.parse(process.env.config);
@@ -9,6 +10,11 @@ config = JSON.parse(process.env.config);
 // If crawl twitter enabled
 if (config.twitter.isEnabled) {
 	twitter.init();
+}
+
+// If crawl flickr enabled
+if (config.flickr.isEnabled) {
+	flickr.init();
 }
 
 app.get('/', function (req, res) {

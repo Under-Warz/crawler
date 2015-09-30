@@ -7,6 +7,7 @@
         "NODE_ENV": "dev",
         "config": {
         	"port": 3000,
+        	"debug": true,
         	// If crawler params come from another WS (like WordPress administration...)
         	"webservices": {
         		"get_options": "http://localhost/crawler/exemple/webservices/config.json", // Empty if use options belows (hashtags, usersToFollow...)
@@ -18,11 +19,19 @@
 	        	"consumer_secret": "8pHGNsLzPNQeeYhRec1q3nfIOYccH33G9kbhHOdFnKELQn3SgK",
 	        	"access_token_key": "2467414032-HvPvEZebWqyozqxfb6xvY2mGfKy32ofKHkssPxG",
 	        	"access_token_secret": "xryzjl6nvi0QrKv9jxmLL7x6tqPEAZyqNBPmFLHRjP5UT",
-	        	"hashtags": ["#test", "#dev"], // Empty for no hashtags
-	        	"usersToFollow": ["2431931683"], // Empty for no follow
-	        	"languages": ["fr"], // Empty for all languages
+	        	"tags": ["#test", "#dev"], // Empty for no hashtags
+	        	"usersToFollow": [], // Empty for no follow
+	        	"languages": [], // Empty for all languages
 	        	"includeReply": false,
 	        	"includeRetweets": false
+	        },
+	        "flickr": {
+	        	"isEnabled": true,
+	        	"api_key": "90fbf57d2b54fd201b66a87dd863037f",
+	        	"api_secret": "77b59f50c1e2781e",
+	        	"tags": ["test"],
+	        	"user_id": "", // Id of the user to get his photos
+	        	"per_page": 100 // Max value : 500 
 	        }
 	    }
     }

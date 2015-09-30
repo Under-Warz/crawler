@@ -12,6 +12,7 @@
   "dependencies": {
     "cron": "^1.0.9",
     "express": "^4.13.3",
+    "node-flickr": "^1.0.0",
     "request": "^2.60.0",
     "twitter": "^1.2.5",
     "underscore": "^1.8.3"

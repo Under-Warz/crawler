@@ -1,7 +1,7 @@
 {
 	"twitter": {
 		"isEnabled": false,
-		"hashtags": [],
+		"tags": [],
 		"usersToFollow": [],
 		"languages": [],
 		"includeReply": false,

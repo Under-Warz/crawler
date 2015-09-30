@@ -14,12 +14,15 @@ module.exports = {
 	},
 
 	crawl: function(client) {
-		var _this = this;
-
-		// Tweets with hashtags
-		if (config.twitter.hashtags.length > 0) {
-			client.stream('statuses/filter', {track: config.twitter.hashtags.join(',')}, function(stream) {
+		// Tweets with tags
+		if (config.twitter.tags.length > 0) {
+			client.stream('statuses/filter', {track: config.twitter.tags.join(',')}, _.bind(function(stream) {
 				stream.on('data', function(tweet) {
+
+					if (config.debug) {
+						console.log("Tweet: ", tweet);
+					}
+
 					var lang = tweet.lang;
 					var isRetweeted = tweet.retweeted;
 					var isReplyToTweet = (tweet.in_reply_to_status_id == null) ? false : true;
@@ -56,7 +59,7 @@ module.exports = {
 
 					// If tweet accepted, save it
 					if (acceptThisTweet) {
-						_this.saveTweet(tweet);
+						this.saveTweet(tweet);
 					}
 				});
 				 
@@ -67,12 +70,12 @@ module.exports = {
 				stream.on('limit', function(message) {
 					throw message;
 				});
-			});
+			}, this));
 		}
 
 		// Tweets by user(s)
 		if (config.twitter.usersToFollow.length > 0) {
-			client.stream('statuses/filter', {follow: config.twitter.usersToFollow.join(',')}, function(stream) {
+			client.stream('statuses/filter', {follow: config.twitter.usersToFollow.join(',')}, _.bind(function(stream) {
 				stream.on('data', function(tweet) {
 					var isRetweeted = tweet.retweeted;
 					var isReplyToTweet = (tweet.in_reply_to_status_id == null) ? false : true;
@@ -98,7 +101,7 @@ module.exports = {
 
 					// If tweet accepted, save it
 					if (acceptThisTweet) {
-						_this.saveTweet(tweet);
+						this.saveTweet(tweet);
 					}
 				});
 				 
@@ -109,7 +112,7 @@ module.exports = {
 				stream.on('limit', function(message) {
 					throw message;
 				});
-			});
+			}, this));
 		}
 	},
 
