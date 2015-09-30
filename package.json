@@ -1,16 +1,13 @@
 {
   "name": "clint-crawler",
   "version": "1.0.0",
-  "description": "Crawl flux Instagram / Twitter",
+  "author": "Laurent Menu <menu.laurent@gmail.com>",
+  "description": "Crawl social networks content",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git@project.clintagency.com:clint-rocket/crawler.git"
+    "url": "https://github.com/Under-Warz/crawler.git"
   },
-  "author": "Laurent Menu",
   "license": "ISC",
   "dependencies": {
     "cron": "^1.0.9",
