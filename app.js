@@ -3,6 +3,7 @@ var app = express();
 var webservices = require('./webservices');
 var twitter = require('./twitter');
 var flickr = require('./flickr');
+var api500px = require('./api500px');
 
 // Load config file from PM2
 config = JSON.parse(process.env.config);
@@ -12,9 +13,14 @@ if (config.twitter.isEnabled) {
 	twitter.init();
 }
 
-// If crawl flickr enabled
+// If crawl FlickR enabled
 if (config.flickr.isEnabled) {
 	flickr.init();
+}
+
+// If crawl 500px enabled
+if (config.api500px.isEnabled) {
+	api500px.init();
 }
 
 app.get('/', function (req, res) {
