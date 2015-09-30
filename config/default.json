@@ -38,7 +38,7 @@
 	        	"consumer_key": "IYfPt3VmvcmwX6euRkHuZ5YFpKSNx9ykZcNsUMoa",
 	        	"consumer_secret": "M6ZV4ZI8EJhLSMgUp7o1nsNGc9joHcXvEPEGGMbj",
 	        	"js_sdk_key": "767998430be8602e88f32edd55df32ad332728f8",
-	        	"tag": "", // Search by tag
+	        	"tag": "", // Search by tag OR by term below
 	        	"term": "Paris" // Search by term
 	        }
 	    }

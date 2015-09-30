@@ -15,17 +15,26 @@ module.exports = {
 				if (error) return console.error(error);
 
 				if (results) {
+					if (config.debug) {
+						console.log(results);
+					}
+					
 					_.each(results.photos, _.bind(function(photo) {
 						this.savePhoto(photo);
 					}, this));
 				}
 			}, this));
 		}
+		// Search by term
 		else if (config.api500px.term != "") {
 			client.photos.searchByTerm(config.api500px.term, {}, _.bind(function(error, results) {
 				if (error) return console.error(error);
 
 				if (results) {
+					if (config.debug) {
+						console.log(results);
+					}
+
 					_.each(results.photos, _.bind(function(photo) {
 						this.savePhoto(photo);
 					}, this));

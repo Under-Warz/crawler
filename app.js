@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 var webservices = require('./webservices');
-var twitter = require('./twitter');
-var flickr = require('./flickr');
-var api500px = require('./api500px');
+var twitter = require('./networks/twitter');
+var flickr = require('./networks/flickr');
+var api500px = require('./networks/api500px');
 
 // Load config file from PM2
 config = JSON.parse(process.env.config);
